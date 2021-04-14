@@ -24,9 +24,9 @@ const mapStateToProps = (state) => {
 
 // the redux's connect passes in the dispatch function
 // in the props
-const mapDispatchToProps = (dispatch) => ({
-  incrementAction: () => dispatch(incrementCounter()),
-  decrementAction: () => dispatch(decrementCounter())
+const mapDispatchToProps = () => ({
+  incrementAction: (payload) => incrementCounter(payload),
+  decrementAction: (payload) => decrementCounter(payload)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

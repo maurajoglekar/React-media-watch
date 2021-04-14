@@ -1,13 +1,15 @@
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from "./counterTypes";
 
-export function incrementCounter() {
+export function incrementCounter(payload) {
   return {
-    type: INCREMENT_COUNTER
+    type: INCREMENT_COUNTER,
+    payload
   };
 }
 
-export function decrementCounter() {
+export function decrementCounter(payload) {
   return {
-    type: DECREMENT_COUNTER
+    type: DECREMENT_COUNTER,
+    payload
   };
 }
