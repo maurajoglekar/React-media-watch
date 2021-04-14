@@ -1,15 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import { decrementCounter, incrementCounter } from "../../redux/counter/counterActions";
+import { 
+  decrementCounter as decrementCounterAction, 
+  incrementCounter as incrementCounterAction
+} from "../../redux/counter/counterActions";
 
-function Counter({ value, incrementAction, decrementAction }) {
+function Counter({ value, incrementCounter, decrementCounter }) {
   return (
     <div className="counter">
       <h2>Counter</h2>
       <div>
-        <button onClick={decrementAction}>-</button>
+        <button onClick={decrementCounter}>-</button>
         <span>{value}</span>
-        <button onClick={incrementAction}>+</button>
+        <button onClick={incrementCounter}>+</button>
       </div>
     </div>
   );
@@ -22,11 +25,7 @@ const mapStateToProps = (state) => {
   }
 };
 
-// the redux's connect passes in the dispatch function
-// in the props
-const mapDispatchToProps = () => ({
-  incrementAction: (payload) => incrementCounter(payload),
-  decrementAction: (payload) => decrementCounter(payload)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, {
+  decrementCounter: decrementCounterAction,
+  incrementCounter: incrementCounterAction
+})(Counter);
