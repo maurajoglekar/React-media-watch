@@ -15,9 +15,12 @@ function Counter({ value, incrementAction, decrementAction }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  value: state.value
-});
+const mapStateToProps = (state) => {
+  const { counter } = state;
+  return {
+    value: counter.value
+  }
+};
 
 // the redux's connect passes in the dispatch function
 // in the props

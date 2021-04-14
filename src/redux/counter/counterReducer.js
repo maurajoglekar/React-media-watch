@@ -1,15 +1,28 @@
 import * as types from "./counterTypes";
 
 const initialState = {
-  value: 0
+  counter: {
+    value: 0
+  }
 };
 
 function counterReducer(state = initialState, action) {
+  const {
+    counter
+  } = state;
   switch (action.type) {
     case types.INCREMENT_COUNTER:
-      return { value: state.value + 1 };
+      return {
+        ...state, counter: {
+          value: counter.value + 1
+        }
+      };
     case types.DECREMENT_COUNTER:
-      return { value: state.value - 1 };
+      return {
+        ...state, counter: {
+          value: counter.value - 1
+        }
+      };
     default:
       return state;
   }
