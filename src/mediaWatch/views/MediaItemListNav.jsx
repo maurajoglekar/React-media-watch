@@ -5,7 +5,36 @@ import AllIcon from '../assets/04.png';
 import MoviesIcon from '../assets/03.png';
 import SeriesIcon from '../assets/02.png';
 import MediaItemContent from './MediaItemContent';
-import addIcon from '../assets/01.png';
+import styled from 'styled-components';
+
+const StyledMediaItemListNav = styled.div`
+  display: flex;
+  min-height: 500px;
+
+  nav {
+    width: 68px;
+    background-color: #53ace4;
+  }
+  nav .icon {
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+  }
+  section {
+    width: 100%;
+    background-color: #32435b;
+  }
+  section > header {
+    color: #ffffff;
+    padding: 10px;
+  }
+  section > header > h1 {
+    font-size: 2em;
+  }
+  section > header .description {
+    font-style: italic;
+  }
+`;
 
 const propTypes = {
     match: PropTypes.object.isRequired
@@ -18,7 +47,7 @@ function MediaItemListNav({ match }) {
     const { medium } = match.params;
 
     return (
-        <>
+        <StyledMediaItemListNav>
             <nav>
                 <NavLink to='/'>
                     <img src={AllIcon} />
@@ -37,7 +66,7 @@ function MediaItemListNav({ match }) {
                 </header>
                 <MediaItemContent medium={medium}></MediaItemContent>
             </section>
-        </>
+        </StyledMediaItemListNav>
     );
 }
 

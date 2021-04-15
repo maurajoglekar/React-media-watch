@@ -1,10 +1,45 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import { NavLink } from "react-router-dom";
-import AllIcon from '../assets/04.png';
-import MoviesIcon from '../assets/03.png';
-import SeriesIcon from '../assets/02.png';
 import addIcon from '../assets/01.png';
+import styled from 'styled-components';
+
+const StyledMediaItemContent = styled.div`
+    display: flex;
+    height: calc(100% - 200px);
+    flex-direction: column;
+
+  header {
+    color: #c6c5c3;
+  }
+  header.medium-movies {
+    color: #53ace4;
+  }
+  header.medium-series {
+    color: #45bf94;
+  }
+  header > h2 {
+    font-size: 1.4em;
+  }
+  header > h2.error {
+    color: #d93a3e;
+  }
+  section {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+  }
+  section > media-item {
+    margin: 10px;
+  }
+  footer {
+    text-align: right;
+  }
+  footer .icon {
+    width: 64px;
+    height: 64px;
+  }
+`;
 
 const propTypes = {
     medium: PropTypes.string
@@ -17,7 +52,7 @@ const propTypes = {
 function MediaItemContent({ medium }) {
 
     return (
-        <>
+        <StyledMediaItemContent>
             <header >
                 <h2>{medium}</h2>
             </header>
@@ -31,7 +66,7 @@ function MediaItemContent({ medium }) {
                 </a>
             </footer>
 
-        </>
+        </StyledMediaItemContent>
     );
 }
 
