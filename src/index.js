@@ -9,7 +9,6 @@ import "./styles.css";
 
 const App = () => (
   <Provider store={store}>
-    <Counter />
     <MediaWatch></MediaWatch>
   </Provider>
 );

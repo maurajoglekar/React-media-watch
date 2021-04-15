@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AllIcon from '../assets/04.png';
 import MoviesIcon from '../assets/03.png';
 import SeriesIcon from '../assets/02.png';
+import MediaWatchRouting from '../views/MediaWatchRouting';
 
 const propTypes = {
   list: PropTypes.array
@@ -17,19 +18,20 @@ function MediaWatch({ list }) {
     <>
       <nav>
         <a>
-          <img src={AllIcon} class="icon" />
+          <img src={AllIcon} />
         </a>
         <a >
-          <img src={MoviesIcon} class="icon" />
+          <img src={MoviesIcon} />
         </a>
         <a>
-          <img src={SeriesIcon} class="icon" />
+          <img src={SeriesIcon} />
         </a>
       </nav>
       <section>
         <header>
           <h1>Media Watch List</h1>
           <p class="description">Keeping track of the media I want to watch.</p>
+          {MediaWatchRouting}
         </header>
       </section>
     </>
