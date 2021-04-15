@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import MediaItemList from './MediaItemList';
 
-const propTypes = {
-  match: PropTypes.object.isRequired
-};
+const propTypes = {};
 const defaultProps = {};
 
 function MediaWatchRouting({ match }) {
   return (
-    <Switch>
-      <Route exact component={MediaItemList} path={`${match.url}`} />
-    </Switch>
+    <BrowserRouter>
+      <Route exact component={MediaItemList} path='/'/>
+      <Route component={MediaItemList} path='/:medium'/>
+    </BrowserRouter>
   );
 }
 

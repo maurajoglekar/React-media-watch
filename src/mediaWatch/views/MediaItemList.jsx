@@ -1,31 +1,52 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
+import AllIcon from '../assets/04.png';
+import MoviesIcon from '../assets/03.png';
+import SeriesIcon from '../assets/02.png';
 import addIcon from '../assets/01.png';
 
 const propTypes = {
-    medium: PropTypes.string
+    match: PropTypes.object.isRequired
   };
 
   const defaultProps = {
-    medium: ''
   };
 
-function MediaItemList({ medium }) {
+function MediaItemList({ match }) {
+    const { medium } = match.params;
 
     return (
         <>
-            <header >
-                <h2>{medium}</h2>
-            </header>
-            {/* category list*/}
             <section>
-                {/* list of media item */}
+                <header>
+                    <h1>Media Watch List</h1>
+                    <p class="description">Keeping track of the media I want to watch.</p>
+                    <nav>
+                        <NavLink to='/'>
+                            <img src={AllIcon} />
+                        </NavLink>
+                        <NavLink to='/movies'>
+                            <img src={MoviesIcon} />
+                        </NavLink>
+                        <NavLink to='/series'>
+                            <img src={SeriesIcon} />
+                        </NavLink>
+                    </nav>
+                    <header >
+                        <h2>{medium}</h2>
+                    </header>
+                    {/* category list*/}
+                    <section>
+                        {/* list of media item */}
+                    </section>
+                    <footer>
+                        <a>
+                            <img src={addIcon} />
+                        </a>
+                    </footer>
+                </header>
             </section>
-            <footer>
-                <a>
-                    <img src={addIcon}/>
-                </a>
-            </footer>
         </>
     );
 }
