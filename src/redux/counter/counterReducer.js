@@ -3,6 +3,9 @@ import * as types from "./counterTypes";
 const initialState = {
   counter: {
     value: 0
+  },
+  mediaItems: {
+    list: []
   }
 };
 
