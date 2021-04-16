@@ -47,8 +47,10 @@ const MediaItemsAPI = {
     getById: function(id) {
       return this.mediaItems.find(item => item.id === id)
     },
-    getByMedium: function(medium) {
-        return this.mediaItems.filter(item => item.medium === medium)
+    getByMedium: function (medium) {
+        return medium === '' ? 
+               this.mediaItems :
+               this.mediaItems.filter(item => item.medium === medium) 
     },
     getNewId: function() {
         if (this.mediaItems.length > 0) {

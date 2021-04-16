@@ -32,6 +32,13 @@ export function getAllMediaItems() {
   };
 }
 
+export function getMediaItemsByMedium({medium}) {
+  return {
+    type: types.GET_MEDIA_ITEMS_BY_MEDIUM,
+    medium
+  };
+}
+
 export function setMediaItems(payload) {
   return {
     type: types.SET_MEDIA_ITEMS,
