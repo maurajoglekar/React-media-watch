@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import addIcon from '../assets/01.png';
 import styled from 'styled-components';
+import MediaItemList from '../container/MediaItemList';
 
-const StyledMediaItemContent = styled.div`
+const StyledMediaItemListContainer = styled.div`
     display: flex;
     height: calc(100% - 200px);
     flex-direction: column;
@@ -49,16 +50,16 @@ const propTypes = {
       medium: ''
   };
 
-function MediaItemContent({ medium }) {
+function MediaItemListContainer({ medium }) {
 
     return (
-        <StyledMediaItemContent>
+        <StyledMediaItemListContainer>
             <header >
                 <h2>{medium}</h2>
             </header>
             {/* category list*/}
             <section>
-                {/* list of media item */}
+                <MediaItemList></MediaItemList>
             </section>
             <footer>
                 <a>
@@ -66,11 +67,11 @@ function MediaItemContent({ medium }) {
                 </a>
             </footer>
 
-        </StyledMediaItemContent>
+        </StyledMediaItemListContainer>
     );
 }
 
-MediaItemContent.propTypes = propTypes;
-MediaItemContent.defaultProps = defaultProps; 
+MediaItemListContainer.propTypes = propTypes;
+MediaItemListContainer.defaultProps = defaultProps; 
 
-export default MediaItemContent;
+export default MediaItemListContainer;

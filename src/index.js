@@ -3,8 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 
 import store from "./configureStore";
-import Counter from "./counter/container/Counter";
-import MediaWatch from "./mediaWatch/container/MediaWatch";
+import MediaWatch from "./mediaWatch/views/MediaWatch";
 import "./styles.css";
 
 const App = () => (

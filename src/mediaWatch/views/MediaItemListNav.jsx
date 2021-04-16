@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import AllIcon from '../assets/04.png';
 import MoviesIcon from '../assets/03.png';
 import SeriesIcon from '../assets/02.png';
-import MediaItemContent from './MediaItemContent';
+import StyledMediaItemListContainer from './MediaItemListContainer';
 import styled from 'styled-components';
 
 const StyledMediaItemListNav = styled.div`
@@ -64,7 +64,7 @@ function MediaItemListNav({ match }) {
                     <h1>Media Watch List</h1>
                     <p class="description">Keeping track of the media I want to watch.</p>
                 </header>
-                <MediaItemContent medium={medium}></MediaItemContent>
+                <StyledMediaItemListContainer medium={medium}></StyledMediaItemListContainer>
             </section>
         </StyledMediaItemListNav>
     );

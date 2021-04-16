@@ -11,7 +11,8 @@ const initialState = {
 
 function counterReducer(state = initialState, action) {
   const {
-    counter
+    counter,
+    mediaItems
   } = state;
   switch (action.type) {
     case types.INCREMENT_COUNTER:
@@ -26,6 +27,15 @@ function counterReducer(state = initialState, action) {
           value: counter.value - 1
         }
       };
+    case types.SET_MEDIA_ITEMS: {
+      const newItems = action.payload;
+      return {
+        ...state,
+        mediaItems: {
+          list: newItems
+        }
+      };
+    }
     default:
       return state;
   }

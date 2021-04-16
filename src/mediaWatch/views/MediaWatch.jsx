@@ -6,7 +6,7 @@ import MediaItemListNav from './MediaItemListNav';
 const propTypes = {};
 const defaultProps = {};
 
-function MediaWatchRouting({ match }) {
+function MediaWatch({ match }) {
   return (
     <BrowserRouter>
       <Route exact component={MediaItemListNav} path='/'/>
@@ -15,7 +15,7 @@ function MediaWatchRouting({ match }) {
   );
 }
 
-MediaWatchRouting.propTypes = propTypes;
-MediaWatchRouting.defaultProps = defaultProps;
+MediaWatch.propTypes = propTypes;
+MediaWatch.defaultProps = defaultProps;
 
-export default MediaWatchRouting;
+export default MediaWatch;
